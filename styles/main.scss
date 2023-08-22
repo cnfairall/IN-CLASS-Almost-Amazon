@@ -69,6 +69,11 @@ body {
       width: 300px;
       margin: 5px;
 
+      .badge {
+        font-size: 1em;
+        background-color: orange;
+      }
+
       .sale-badge {
         font-size: 1em;
         background-color: blue;
@@ -94,5 +99,9 @@ body {
 
   .description {
     white-space: pre-wrap;
+  }
+
+  .fave {
+    color: yellow;
   }
 }
