@@ -10,7 +10,7 @@ import viewBook from '../pages/viewBook';
 
 /* eslint-disable no-alert */
 
-const domEvents = () => {
+const domEvents = (user) => {
   document.querySelector('#main-container').addEventListener('click', (e) => {
     // CLICK EVENT FOR DELETING A BOOK
     if (e.target.id.includes('delete-book')) {
@@ -22,13 +22,13 @@ const domEvents = () => {
 
     // CLICK EVENT FOR SHOWING FORM FOR ADDING A BOOK
     if (e.target.id.includes('add-book-btn')) {
-      addBookForm();
+      addBookForm(user.uid);
     }
 
     // CLICK EVENT EDITING/UPDATING A BOOK
     if (e.target.id.includes('edit-book-btn')) {
       const [, firebaseKey] = e.target.id.split('--');
-      getSingleBook(firebaseKey).then((bookObj) => addBookForm(bookObj));
+      getSingleBook(firebaseKey).then((bookObj) => addBookForm(user.uid, bookObj));
     }
 
     // CLICK EVENT FOR VIEW BOOK DETAILS
@@ -47,24 +47,26 @@ const domEvents = () => {
     if (e.target.id.includes('delete-author-btn')) {
       if (window.confirm('Want to delete?')) {
         const [, firebaseKey] = e.target.id.split('--');
-        deleteAuthorBooksRelationship(firebaseKey).then(getAuthors).then((array) => {
-          if (array.length) {
-            showAuthors(array);
-          } else {
-            emptyAuthors();
-          }
+        deleteAuthorBooksRelationship(firebaseKey).then(() => {
+          getAuthors(user.uid).then((array) => {
+            if (array.length) {
+              showAuthors(array);
+            } else {
+              emptyAuthors();
+            }
+          });
         });
       }
     }
 
     // ADD CLICK EVENT FOR SHOWING FORM FOR ADDING AN AUTHOR
     if (e.target.id.includes('add-author-btn')) {
-      addAuthorForm();
+      addAuthorForm(user.uid);
     }
     // ADD CLICK EVENT FOR EDITING AN AUTHOR
     if (e.target.id.includes('update-author')) {
       const [, firebaseKey] = e.target.id.split('--');
-      getSingleAuthor(firebaseKey).then((Obj) => addAuthorForm(Obj));
+      getSingleAuthor(firebaseKey).then((Obj) => addAuthorForm(user.uid, Obj));
     }
   });
 };

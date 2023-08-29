@@ -5,19 +5,19 @@ import { showAuthors, emptyAuthors } from '../pages/authors';
 import { faveAuthors, getAuthors } from '../api/authorData';
 
 // navigation events
-const navigationEvents = () => {
+const navigationEvents = (user) => {
   // LOGOUT BUTTON
   document.querySelector('#logout-button')
     .addEventListener('click', signOut);
 
   // BOOKS ON SALE
   document.querySelector('#sale-books').addEventListener('click', () => {
-    booksOnSale().then(showBooks);
+    booksOnSale(user.uid).then(showBooks);
   });
 
   // ALL BOOKS
   document.querySelector('#all-books').addEventListener('click', () => {
-    getBooks().then((array) => {
+    getBooks(user.uid).then((array) => {
       if (array.length) {
         showBooks(array);
       } else {
@@ -28,7 +28,7 @@ const navigationEvents = () => {
 
   // 3. If the array is empty because there are no authors, make sure to use the emptyAuthor function
   document.querySelector('#authors').addEventListener('click', () => {
-    getAuthors().then((array) => {
+    getAuthors(user.uid).then((array) => {
       if (array.length) {
         showAuthors(array);
       } else {
@@ -45,7 +45,7 @@ const navigationEvents = () => {
   document.querySelector('#search').addEventListener('keyup', (e) => {
     const searchValue = document.querySelector('#search').value.toLowerCase();
     if (e.keyCode === 13) {
-      searchBooks(searchValue)
+      searchBooks(searchValue, user.uid)
         .then((search) => {
           if (search.length) {
             showBooks(search);
