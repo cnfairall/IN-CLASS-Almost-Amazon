@@ -62,7 +62,7 @@ const formEvents = (user) => {
         const patchPayload = { firebaseKey: name };
 
         updateOrder(patchPayload).then(() => {
-          getOrder(user.uid).then(showOrder);
+          getOrders(user.uid).then(showOrders);
         });
       });
     }
