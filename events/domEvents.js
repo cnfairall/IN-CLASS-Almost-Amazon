@@ -7,6 +7,7 @@ import addAuthorForm from '../components/forms/addAuthorForm';
 import { getAuthorDetails, getBookDetails, deleteAuthorBooksRelationship } from '../api/mergedData';
 import viewAuthor from '../pages/viewAuthor';
 import viewBook from '../pages/viewBook';
+import addOrderForm from '../components/forms/addOrderForm';
 
 /* eslint-disable no-alert */
 
@@ -18,6 +19,11 @@ const domEvents = (user) => {
         const [, firebaseKey] = e.target.id.split('--');
         deleteBook(firebaseKey).then(getBooks).then(showBooks);
       }
+    }
+
+    if (e.target.id.includes('addToOrder')) {
+      const [, firebaseKey] = e.target.id.split('--');
+      console.warn(firebaseKey);
     }
 
     // CLICK EVENT FOR SHOWING FORM FOR ADDING A BOOK
@@ -68,6 +74,11 @@ const domEvents = (user) => {
     if (e.target.id.includes('update-author')) {
       const [, firebaseKey] = e.target.id.split('--');
       getSingleAuthor(firebaseKey).then((Obj) => addAuthorForm(user.uid, Obj));
+    }
+
+    // ADD CLICK EVENT FOR SHOWING FORM FOR ADDING AN AUTHOR
+    if (e.target.id.includes('add-order-btn')) {
+      addOrderForm(user.uid);
     }
   });
 };

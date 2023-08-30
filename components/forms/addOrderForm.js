@@ -15,8 +15,8 @@ const addOrderForm = (uid, obj = {}) => {
     </div>
     <select class="form-select" id="orderType" aria-label="Default select example">
       <option selected>Select Order Type</option>
-      <option value="online">Online</option>
-      <option value="inPerson">In-person</option>
+      <option value="Online">Online</option>
+      <option value="In-person">In-person</option>
     </select>
     <button type="submit" class="btn btn-primary mt-3">Submit Order</button>
   </form>`;

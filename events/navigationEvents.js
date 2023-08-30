@@ -3,7 +3,8 @@ import { booksOnSale, getBooks, searchBooks } from '../api/bookData';
 import { showBooks, emptyBooks } from '../pages/books';
 import { showAuthors, emptyAuthors } from '../pages/authors';
 import { faveAuthors, getAuthors } from '../api/authorData';
-import addOrderForm from '../components/forms/addOrderForm';
+import { showOrders, emptyOrders } from '../pages/orders';
+import { getOrders } from '../api/orderData';
 
 // navigation events
 const navigationEvents = (user) => {
@@ -42,9 +43,15 @@ const navigationEvents = (user) => {
     faveAuthors().then(showAuthors);
   });
 
-  // ADD CLICK EVENT FOR SHOWING FORM FOR CREATING ORDER
+  // ALL ORDERS
   document.querySelector('#order').addEventListener('click', () => {
-    addOrderForm(user.uid);
+    getOrders(user.uid).then((array) => {
+      if (array.length) {
+        showOrders(array);
+      } else {
+        emptyOrders();
+      }
+    });
   });
 
   // STRETCH: SEARCH
