@@ -63,6 +63,7 @@ const domEvents = (user) => {
     if (e.target.id.includes('add-author-btn')) {
       addAuthorForm(user.uid);
     }
+
     // ADD CLICK EVENT FOR EDITING AN AUTHOR
     if (e.target.id.includes('update-author')) {
       const [, firebaseKey] = e.target.id.split('--');
