@@ -24,9 +24,6 @@ const navBar = () => {
             <li class="nav-item">
               <a class="nav-link" href="#" id="fave-authors">Favorite Authors</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#" id="order">Create Order</a>
-            </li>
             <li>
             <input
               class="form-control mr-sm-2"
