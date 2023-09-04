@@ -54,7 +54,7 @@ const formEvents = (user) => {
       const payload = {
         customerName: document.querySelector('#customerName').value,
         email: document.querySelector('#email').value,
-        orderType: document.querySelector('#orderType').value,
+        orderType: document.querySelector('#orderType').selected,
         uid: user.uid
       };
 
