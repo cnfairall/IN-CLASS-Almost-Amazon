@@ -2,7 +2,7 @@
 
 Almost Amazon is a user-specific app that helps online booksellers manage their inventory in an online database.
 
-[View App](#https://steady-fairy-83b5d5.netlify.app)
+[View App](https://steady-fairy-83b5d5.netlify.app)
 
 ## About the User
 - The ideal user for this application is an online bookstore owner.
