@@ -20,9 +20,5 @@ Almost Amazon is a user-specific app that helps online booksellers manage their 
 - Delete: The user can delete specific books and authors. When the user deletes an author, all of the author's books are also deleted.
 - Search: The user can search books by title.
 
-## Relevant Links <!-- Link to all the things that are required outside of the ones that have their own section -->
-- [Check out the deployed site](#https://steady-fairy-83b5d5.netlify.app)
-- [Wireframes](#https://almost-amazon-webpack5.netlify.app)
-
 ## Contributors
 - [Courtney Fairall](https://github.com/cnfairall)
