@@ -1,71 +1,28 @@
-# Almost Amazon
-We are building an admin app that allows a store owner to login to the app and manage books and authors.
+# Almost Amazon [![Netlify Status](https://api.netlify.com/api/v1/badges/87ca3567-417e-4611-b539-3214912c578e/deploy-status)](https://app.netlify.com/sites/steady-fairy-83b5d5/deploys)
 
-[User Restricted Deployed Sample](https://almost-amazon-webpack5.netlify.app/#)
+Almost Amazon is a user-specific app that helps online booksellers manage their inventory in an online database.
 
-<img width="1310" alt="aass" src="https://user-images.githubusercontent.com/29741570/199130815-08170a17-6c8f-4045-9703-79e94546b8cc.png">
+[View App](#https://steady-fairy-83b5d5.netlify.app)
 
-We will be learning about the following:
-- XHR requests
-- Promises
-- Firebase
-- ERDs
-- Postman
-- CRUD
+## About the User
+- The ideal user for this application is an online bookstore owner.
+- They want to create, read, update and delete books and authors in their inventory.
+- This app solves the problem of keeping track of what products are available in their store.
 
-## Get Started
-- Clone your repo
-- Install app dependencies: `npm i`
-- Start your server: `npm start`
-  - The server starts the only error you should see is this one (which will be fixed after the Firebase Walkthrough is completed):
-    ```js
-    {
-      code: "auth/invalid-api-key",
-      message: "Your API key is invalid, please check you have copied it correctly.",
-      a: null
-    }
-    ```
-- Change `.sample.env` file name to `.env`
+## Features 
+- User-specific: The user logs in with their google account and sees all the books they've created in their inventory.
+- Create a book: User clicks "add a book" button to open a form. After the user inputs the book information, submitting the form creates a book object on the database and the books page re-renders to show the updated collection.
+- Authors: The user can view all the authors they've created.
+- Create an author: User clicks "add an author" button on "Authors" page to open a form. Submitting the form creates an author object on the database and the authors page re-renders to show the updated collection. Authors do not need a book to be created.
+- Filter: The user can view only books that are on sale, and only favorite authors.
+- View: The user can view a details page for each individual book and author.
+- Update: User can edit books and authors.
+- Delete: The user can delete specific books and authors. When the user deletes an author, all of the author's books are also deleted.
+- Search: The user can search books by title.
 
+## Relevant Links <!-- Link to all the things that are required outside of the ones that have their own section -->
+- [Check out the deployed site](#https://steady-fairy-83b5d5.netlify.app)
+- [Wireframes](#https://almost-amazon-webpack5.netlify.app)
 
-## TODO 1 - Get Setup
-In preparation for next week, complete the following in lab:
-- [Firebase Walkthrough Videos ~15 minutes](https://vimeo.com/showcase/codetracker-firebase)
-  - Create a project called `Almost Amazon`
-  - Add a Realtime Database
-  - Create an app called `Almost Amazon`
-  - Add Auth
-  - Add the Keys to your `.env` file
-  - Upload the sample data to Firebase
-- Test the Firebase Setup
-  - Start and stop your server
-  - Go to the application it should look like this:
- 
-<img width="400" alt="Login Screen" src="https://user-images.githubusercontent.com/29741570/199130975-f6fb8884-ed5b-4d8b-9b7f-5a49b6f93975.png">
-
-  - The API key error should also be gone
-  - Clicking the button should open up a Google Popup. Select a user to sign in with.
-
-    <img width="400" alt="Google Pop-Up" src="https://user-images.githubusercontent.com/29741570/199131213-6eb5c2cf-6353-4ec1-a543-312c61c7633d.png">
-
-  - After signing in, there should be a Navbar
-    - If your screen size is small, the Navbar might be collapsed like in the image below. Click on the hamburger button to open it.
- 
-<img width="400" alt="Logged In Screen" src="https://user-images.githubusercontent.com/29741570/199130976-2136b3dc-a7ca-46d6-a335-efc72fdf79e1.png">  
-  - Click on the Log Out Button
-
- 
- <img width="400" alt="Logout Button" src="https://user-images.githubusercontent.com/29741570/199130970-21e7de43-b6b4-4f01-aeec-961bccf64841.png">
-  
-  - This should bring back the Login Button
-
-## TODO 2 - Look at the Code...
-  - Take a look at the layout of the application. Start in `main.js` and follow the flow to get up to speed.
-    - Look at the components, events, helpers, and views
-
-## Technologies used
-- Javascript
-- Firebase Auth
-- Firebase Realtime Database
-- Bootstrap 5
-- Webpack 5
+## Contributors
+- [Courtney Fairall](https://github.com/cnfairall)
